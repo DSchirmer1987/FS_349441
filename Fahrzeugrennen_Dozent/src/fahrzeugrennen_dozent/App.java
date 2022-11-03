@@ -41,6 +41,7 @@ public class App {
 		Arrays.sort(positionen);
 		
 		System.out.println(Arrays.toString(positionen));
+		
 	}
 
 }
