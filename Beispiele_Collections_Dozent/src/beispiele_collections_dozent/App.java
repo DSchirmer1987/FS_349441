@@ -1,9 +1,10 @@
 package beispiele_collections_dozent;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Stack;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -14,7 +15,9 @@ public class App {
 		//arbeitenMitTreeSet();
 		//arbeitenMitHashSet();
 		//arbeitenMitTreeMap();
-		arbeitenMitHashMap();
+		//arbeitenMitHashMap();
+		//arbeitenMitStack();
+		arbeitenMitLinkedList();
 	}
 	
 	/**
@@ -146,5 +149,100 @@ public class App {
 		hauptstaedte.put("USA", "Washington DC");
 		
 		System.out.println(hauptstaedte);
+	}
+	
+	/**
+	 * Stack - Stapelspeicher(StapelKollektion)
+	 * - Funktioniert wie ein Kartenstapel.
+	 * - Es werden Elemente hineingepackt und das letzte hinzugefüte Element wird zuerst 
+	 *   herausgegeben
+	 *   
+	 *   Erstellung
+	 *   Hinzufügen
+	 *   Ausgeben
+	 *   spezielle Funktionalitäten
+	 */
+	public static void arbeitenMitStack() {
+		Stack<String> karten = new Stack<>();
+		
+		karten.push("Pik 3");
+		karten.push("Herz 5");
+		karten.push("Karo 7");
+		System.out.println(karten);
+		
+		// pop() gibt das letze Element aus und entfernt es vom Stapel
+		String karte = karten.pop();
+		System.out.println(karte);
+		System.out.println(karten);
+		
+		karten.push("Herz Bube");
+		// peek() gibt das letzte Element aus, aber entfernt es nicht.
+		karte = karten.peek();
+		System.out.println(karte);
+		System.out.println(karten);
+		
+		
+		for(String k : karten) {
+			System.out.println(k);
+		}
+		System.out.println(karten);
+		
+		//Suchen
+		System.out.println(karten.search("Pik 3"));
+		System.out.println(karten.search("Herz Bube"));
+		System.out.println(karten.search("Pik 4"));
+		
+		karten.remove("Pik 3");
+		System.out.println(karten);
+		karten.clear();
+		System.out.println(karten);
+	}
+	
+	/**
+	 * LinkedList
+	 *  - Ähnlich wie die ArrayList
+	 *  
+	 *	- Unterschiede sind in der Art wie die Elemente gespeichert sind.
+	 *		LinkedList speichert die Elemente in einem 'Container'
+	 *		Der 'Container' behinhaltet immer die Verknüpfung zum nächsten Element
+	 */
+	public static void arbeitenMitLinkedList() {
+		LinkedList<String> liste = new LinkedList<>();
+		
+		liste.add("Buch");
+		liste.add("Film");
+		liste.add("Spielzeug");
+		liste.add("Motorrad");
+		liste.add("Flugzeug");
+		System.out.println(liste);
+		
+		System.out.println(liste.get(2));
+		
+		System.out.println(liste.contains("Auto"));
+		
+		ArrayList<String> liste2 = new ArrayList<>();
+		liste2.add("Spielzeug");
+		liste2.add("Buch");
+		liste2.add("Film");
+		liste2.add("Computer");
+		
+		
+		System.out.println(liste.containsAll(liste2));
+		System.out.println(liste2.containsAll(liste));
+		System.out.println(liste.size());
+		
+		
+		ArrayList<String> unterschied = new ArrayList<>();
+		unterschied.addAll(liste);// Fügt alle Elemente einer Kollektion ein
+		unterschied.removeAll(liste2); // Entfernt alle übereinstimmende Elemente, die von einer gegeben Kollektion sind
+		System.out.println(unterschied);
+		
+		ArrayList<String> unterschied2 = new ArrayList<>();
+		unterschied2.addAll(liste2);
+		unterschied2.removeAll(liste);
+		System.out.println(unterschied2);
+		
+		unterschied.addAll(unterschied2);
+		System.out.println(unterschied);
 	}
 }
