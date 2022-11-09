@@ -1,0 +1,18 @@
+SQL - Structured Query Language (Strukturierte Abfrage Sprache)
+DBMS - DataBase Managament Systems (z.b. : MySQL, Oracle, MariaDB, SQLite, MsSQL)
+
+SQL wird unterteilt in 3 Teilbereiche:
+DDL - Data Definition Language - Datendefinition (Wie soll es aussehen?)
+	- CREATE
+	- ALTER
+	- DROP
+	
+DML - Data Manipulation Language - Datenmanipulierung (Was soll mit den Daten geschehen?)
+	- INSERT
+	- UPDATE
+	- DELETE
+	- SELECT (Oft auch in DQL - Data Query Language eingeordnet | DQL ist aber noch kein Standard)
+
+DCL - Data Control Language - Datenkontrolle (Wer hat welchen Zugriff?)
+	- GRANT
+	- REVOKE

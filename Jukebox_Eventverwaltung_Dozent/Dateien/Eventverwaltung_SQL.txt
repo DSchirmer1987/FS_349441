@@ -1,0 +1,41 @@
+CREATE TABLE mitarbeiter (
+	PersonalNummer INTEGER NOT NULL PRIMARY KEY,
+	Vorname VARCHAR(50),
+	Nachname VARCHAR(50),
+	Spezialisierung VARCHAR(25),
+	Gehalt DOUBLE
+);
+
+CREATE TABLE tournee (
+	TourneeID INTEGER NOT NULL PRIMARY KEY,
+	Name VARCHAR(50),
+	Start DATE,
+	Ende DATE
+);
+
+CREATE TABLE location (
+	LocationID INTEGER NOT NULL PRIMARY KEY,
+	Name VARCHAR(50),
+	Ort VARCHAR(50),
+	MaxBesucher INTEGER
+);
+
+CREATE TABLE veranstaltung (
+	VeranstaltungID INTEGER NOT NULL PRIMARY KEY,
+	Name VARCHAR(50),
+	Datum DATE,
+	Veranstaltungsart VARCHAR(29),
+	Aktiv BOOLEAN,
+	TourneeID INTEGER,
+	LocationID INTEGER,
+	FOREIGN KEY (TourneeID) REFERENCES tournee (TourneeID),
+	FOREIGN KEY (LocationID) REFERENCES location (LocationID)
+);
+
+CREATE TABLE mitarbeiter_veranstaltung (
+	PersonalNummer INTEGER,
+	VeranstaltungID INTEGER,
+	PRIMARY KEY (PersonalNummer, VeranstaltungID),
+	FOREIGN KEY (PersonalNummer) REFERENCES mitarbeiter (PersonalNummer),
+	FOREIGN KEy (VeranstaltungID) REFERENCES veranstaltung (VeranstaltungID)
+);

@@ -1,0 +1,48 @@
+SQL - CREATE TABLE Syntax
+
+Aufbau:
+
+CREATE TABLE tabellenname (
+	spalte1 Datentyp [Optionen],
+	spalte2 Datentyp [Optionen],
+	...
+	spalteN Datentyp [Optionen],
+	[Optionale Angaben wie PK, FK, INDEX usw.]
+);
+
+
+Beispiele:
+Tabelle mit Primärschlüssel-Angabe, in der Spalte
+
+CREATE TABLE beispiel (
+	beispielID INTEGER PRIMARY KEY NOT NULL,
+	beispielName VARCHAR(30) NOT NULL DEFAULT "Hallo Welt",
+	beispielBeschreibung TEXT,
+	beispielGehalt DOUBLE NOT NULL,
+	beispielDatum DATE
+);
+
+Tabelle mit Primärschlüssel-Angabe NACH den Spalten - Wenn der PRIMARY KEY mehr als 1 Spalte umfasst
+
+CREATE TABLE beispiel (
+	beispielID INTEGER NOT NULL,
+	beispielName VARCHAR(30) NOT NULL DEFAULT "Hallo Welt",
+	beispielBeschreibung TEXT,
+	beispielGehalt DOUBLE NOT NULL,
+	beispielDatum DATE,
+	PRIMARY KEY (beispielID, beispielName)
+);
+
+Tabelle mit Fremdschlüssel-Angabe:
+
+CREATE TABLE beispiel (
+	beispielID INTEGER NOT NULL,
+	beispielName VARCHAR(30) NOT NULL DEFAULT "Hallo Welt",
+	beispielBeschreibung TEXT,
+	beispielGehalt DOUBLE NOT NULL,
+	beispielDatum DATE,
+	PRIMARY KEY (beispielID, beispielName),
+	FOREIGN KEY (beispielGehalt) REFERENCES Fremdtabelle (Fremdspalte)
+		[ON DELETE RESTRICT|CASCADE]
+		[ON UPDATE RESTRICT|CASCADE]
+);
