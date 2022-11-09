@@ -1,3 +1,4 @@
+--- Tabellen erstellen
 CREATE TABLE mitarbeiter (
 	PersonalNummer INTEGER NOT NULL PRIMARY KEY,
 	Vorname VARCHAR(50),
@@ -39,3 +40,52 @@ CREATE TABLE mitarbeiter_veranstaltung (
 	FOREIGN KEY (PersonalNummer) REFERENCES mitarbeiter (PersonalNummer),
 	FOREIGN KEy (VeranstaltungID) REFERENCES veranstaltung (VeranstaltungID)
 );
+
+--- Daten einfügen
+INSERT INTO mitarbeiter (Vorname, Nachname, PersonalNummer, Spezialisierung, Gehalt)
+	VALUES('Max', 'Mustermann', 111, 'Catering', 2500.50) , 
+	      ('Mike', 'Muster', 222, 'Technik', 2500.50),
+		  ('Peter', 'Lustig', 333, 'Security', 3555.55);
+		  
+		  
+INSERT INTO location 
+	VALUES (123, 'Berlin', 'Berlin', 250),
+		   (456, 'Hamburg', 'Hamburg', 300);
+	
+	
+INSERT INTO tournee
+	VALUES(123, 'Weinachten 2022', '2022-12-23', '2022-12-26');
+	
+	
+INSERT INTO veranstaltung
+	VALUES(789, 'Benefiz Berlin', '2022-12-23', 'Halle', TRUE, 123, 456);
+	
+
+INSERT INTO mitarbeiter_veranstaltung
+	VALUES (111,789),
+		   (222,789);
+		   
+--- Daten auslesen
+Alle Mitarbeiter:
+SELECT * FROM mitarbeiter;
+
+ID, Name und maxBesucher aller Locations:
+SELECT LocationID, Name, maxBesucher FROM location;
+
+Alle Mitarbeiter deren Nachname mit Muster beginnt:
+SELECT * FROM mitarbeiter WHERE Nachname LIKE 'Muster%';
+
+Alle Locations die NICHT Berlin im Ort haben:
+SELECT * FROM location WHERE Ort <> 'Berlin';
+SELECT * FROM location WHERE UPPER(ort) <> 'BERLIN';
+SELECT * FROM location WHERE Ort NOT LIKE 'Berlin';
+
+Alle Mitarbeiter deren Gehalt zwischen 2000 und 3000 liegt:
+SELECT * FROM mitarbeiter WHERE Gehalt BETWEEN 2000 AND 3000;
+SELECT * FROM mitarbeiter WHERE Gehalt >= 2000 AND Gehalt <= 3000;
+
+Alle Mitarbeiter deren Vorname mit M beginnt und dann insgesamt 3 Zeichen lang ist:
+SELECT * FROM mitarbeiter WHERE Vorname LIKE 'M__';
+
+
+
