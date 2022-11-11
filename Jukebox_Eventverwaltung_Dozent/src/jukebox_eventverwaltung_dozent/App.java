@@ -4,12 +4,13 @@ import jukebox_eventverwaltung_dozent.model.Location;
 import jukebox_eventverwaltung_dozent.model.Mitarbeiter;
 import jukebox_eventverwaltung_dozent.model.Tournee;
 import jukebox_eventverwaltung_dozent.model.Veranstaltung;
+import jukebox_eventverwaltung_dozent.view.Hauptfenster;
 
 public class App {
 
 	public static void main(String[] args) {
-		eventverwaltungsTest();
-
+//		eventverwaltungsTest();
+		starteGUI();
 	}
 	
 	public static void eventverwaltungsTest() {
@@ -24,5 +25,9 @@ public class App {
 		
 		System.out.println(tournee);
 	}
-
+	
+	public static void starteGUI() {
+		Hauptfenster hf = new Hauptfenster();
+		hf.setVisible(true);
+	}
 }
