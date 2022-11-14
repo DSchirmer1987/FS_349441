@@ -1,5 +1,6 @@
 package jukebox_eventverwaltung_dozent;
 
+import jukebox_eventverwaltung_dozent.controller.AppController;
 import jukebox_eventverwaltung_dozent.model.Location;
 import jukebox_eventverwaltung_dozent.model.Mitarbeiter;
 import jukebox_eventverwaltung_dozent.model.Tournee;
@@ -10,7 +11,8 @@ public class App {
 
 	public static void main(String[] args) {
 //		eventverwaltungsTest();
-		starteGUI();
+//		starteGUI();
+		AppController ac = new AppController();
 	}
 	
 	public static void eventverwaltungsTest() {

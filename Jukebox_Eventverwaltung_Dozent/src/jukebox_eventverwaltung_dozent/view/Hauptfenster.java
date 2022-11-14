@@ -3,7 +3,12 @@ package jukebox_eventverwaltung_dozent.view;
 import javax.swing.JFrame;
 
 public class Hauptfenster extends JFrame{
+	private Hauptinhalt hauptinhalt = new Hauptinhalt();
 	
+	public Hauptinhalt getHauptinhalt() {
+		return hauptinhalt;
+	}
+
 	public Hauptfenster() {
 		super();
 		setSize(1280, 720);
@@ -14,6 +19,6 @@ public class Hauptfenster extends JFrame{
 		// Setzen der Menübar
 		setJMenuBar(new Menuleiste());
 		
-		setContentPane(new Hauptinhalt());
+		setContentPane(hauptinhalt);
 	}
 }
