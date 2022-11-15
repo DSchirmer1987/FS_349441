@@ -1,0 +1,43 @@
+Klausurthemen:
+UML
+	- Notationselemente Klassendiagramm
+		- Assoziationen
+		- Klassen
+		- Generalisierung
+		- Aggregation/Komposition
+	- Notationselemente Anwendungsfalldiagramm (Use-Case)
+		- Systemgrenze
+		- Akteure
+		- Include / Extend
+		- Generalisierung
+		
+Fachspezifisch
+	- Vorgehensmodelle
+		- Scrum
+		- Kanban
+		- Agile
+	- Anforderungsanalyse
+	- Software-Tests
+		- Black / White Box
+	- Software-Engineering
+		- Planung
+		- Sketching/Mockup/Wireframes
+	- Software-Ergonomie
+	- Sichere Software-Entwicklung
+		- Informationssicherheit
+			- Schutzziele
+	- Java
+		- Basis-Wissen
+		
+		
+		
+
+
+Beispielfragen:
+
+Aussage															Wahr		Falsch
+Die Systemgrenze beim Anwendungsfalldiagramm ist optional.					X
+In Java sind alle Klassen von der Klasse Object abgeleitet.		X
+
+Fehlertoleranz bedeutet Fehler abfangen und 					
+keine Hinweise und oder Hilfestellung anbieten.								X
