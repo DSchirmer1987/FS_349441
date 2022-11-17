@@ -1,11 +1,7 @@
 package beispiele_junit_dozent.myTests;
 
-import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.lang.reflect.Method;
-
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
