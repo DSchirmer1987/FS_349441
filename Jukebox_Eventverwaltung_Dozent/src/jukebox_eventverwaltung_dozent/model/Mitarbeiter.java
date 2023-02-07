@@ -56,7 +56,7 @@ public class Mitarbeiter {
 				+ ", spezialisierung=" + spezialisierung + ", gehalt=" + gehalt + ", GRUNDGEHALT=" + GRUNDGEHALT + "]";
 	}
 	
-	public double gehaltBerechnen() {
+	public void gehaltBerechnen() {
 		switch(this.spezialisierung) {
 			case "Security":{
 				this.gehalt = this.GRUNDGEHALT * 1.10;
@@ -75,6 +75,5 @@ public class Mitarbeiter {
 				break;
 			}
 		}
-		return this.gehalt;
 	}
 }
